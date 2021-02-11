@@ -11,63 +11,62 @@ import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 public class Subscriber {
-  @Id
-  @GeneratedValue(strategy=GenerationType.AUTO)
-  private long id;
-  
-  private String firstName;
-  private String lastName;
-  private String username;
-  
-  
-  @CreationTimestamp
-  private Date createdAt;
-  
-  public Subscriber() {}
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
 
-public Subscriber(String firstName, String lastName, String username) {
-	this.firstName = firstName;
-	this.lastName = lastName;
-	this.username = username;
-}
+	private String firstName;
+	private String lastName;
+	private String username;
 
-public String getFirstName() {
-	return firstName;
-}
+	@CreationTimestamp
+	private Date createdAt;// Don't need @Column because we used createdAt instead of signedUp
 
-public void setFirstName(String firstName) {
-	this.firstName = firstName;
-}
+	public Subscriber() {
+	}
 
-public String getLastName() {
-	return lastName;
-}
+	public Subscriber(String firstName, String lastName, String username) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.username = username;
+	}
 
-public void setLastName(String lastName) {
-	this.lastName = lastName;
-}
+	public String getFirstName() {
+		return firstName;
+	}
 
-public String getUsername() {
-	return username;
-}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-public void setUsername(String username) {
-	this.username = username;
-}
+	public String getLastName() {
+		return lastName;
+	}
 
-public Date getCreatedAt() {
-	return createdAt;
-}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-public void setCreatedAt(Date createdAt) {
-	this.createdAt = createdAt;
-}
+	public String getUsername() {
+		return username;
+	}
 
-@Override
-public String toString() {
-	return "Subscriber [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", username=" + username
-			+ ", createdAt=" + createdAt + "]";
-}
-  
-  
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	@Override
+	public String toString() {
+		return "Subscriber [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", username=" + username
+				+ ", createdAt=" + createdAt + "]";
+	}
+
 }
