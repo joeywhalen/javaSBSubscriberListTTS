@@ -31,8 +31,9 @@ public class SubscriberController {
 	}
 	@GetMapping(value = "/subscribers")
 	public String getAllSubscribers(Model model) {
-		
-		model.addAttribute("String", model);
+		Subscriber subscriberList = new Subscriber();
+		subscriberRepository.save(subscriberList);
+		model.addAttribute("String", subscriberList);
 		return "subscriber/subscribers";
 		
 	}
