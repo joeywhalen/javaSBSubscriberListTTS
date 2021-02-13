@@ -29,6 +29,11 @@ public class SubscriberController {
 		model.addAttribute("username", subscriberToAdd.getUsername());
 		return "subscriber/result";
 	}
-
-	
+	@GetMapping(value = "/subscribers")
+	public String getAllSubscribers(Model model) {
+		
+		model.addAttribute("String", model);
+		return "subscriber/subscribers";
+		
+	}
 }
