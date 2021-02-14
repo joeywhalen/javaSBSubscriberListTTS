@@ -36,7 +36,7 @@ public class SubscriberController {
 	public String getAllSubscribers(Model model) {
 		List<Subscriber> subscriberList = new ArrayList<>();// Subscriber subscriberList = new Subscriber();
 		subscriberRepository.findAll().forEach(subscriberList :: add);
-		model.addAttribute("String", subscriberList);
+		model.addAttribute("subscribers", subscriberList);
 		return "subscriber/subscribers";
 		
 	}
