@@ -1,5 +1,8 @@
 package com.tts.subscriberlisttts.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,8 +34,8 @@ public class SubscriberController {
 	}
 	@GetMapping(value = "/subscribers")
 	public String getAllSubscribers(Model model) {
-		Subscriber subscriberList = new Subscriber();
-		subscriberRepository.save(subscriberList);
+		ArrayList<String> subscriberList = new ArrayList<String>();// Subscriber subscriberList = new Subscriber();
+		subscriberRepository.findAll();
 		model.addAttribute("String", subscriberList);
 		return "subscriber/subscribers";
 		
