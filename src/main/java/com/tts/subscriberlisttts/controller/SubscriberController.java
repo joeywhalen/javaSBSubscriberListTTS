@@ -34,8 +34,8 @@ public class SubscriberController {
 	}
 	@GetMapping(value = "/subscribers")
 	public String getAllSubscribers(Model model) {
-		List<Subscriber> subscriberList = new ArrayList<>();// Subscriber subscriberList = new Subscriber();
-		subscriberRepository.findAll().forEach(subscriberList :: add);
+		List<Subscriber> subscriberList = new ArrayList<Subscriber>();// Subscriber subscriberList = new Subscriber();
+		subscriberList = subscriberRepository.findAll();
 		model.addAttribute("subscribers", subscriberList);
 		return "subscriber/subscribers";
 		

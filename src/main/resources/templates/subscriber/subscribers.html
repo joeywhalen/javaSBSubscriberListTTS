@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlms:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Subscribers</title>
@@ -19,10 +19,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-link active" href="index.html">Home <span
-						class="sr-only">(current)</span></a>
-					<a class="nav-link active" href="subscriberdetails.html">Subscriber Details <span
-						class="sr-only">(current)</span></a>
+					<a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
 				</div>
 			</div>
 		</nav>
@@ -30,24 +27,16 @@
 		<table border="1">
 			<thead>
 				<tr>
-					<th th:text="#{msg.firstName}" />
-					<th th:text="#{msg.lastName}" />
-					<th th:text="index" />
-					<th th:text="count" />
-					<th th:text="first" />
-					<th th:text="last" />
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th class="col-space-1" />
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="subscriber, iStat : ${subscribers}"
-					th:style="${iStat.odd}? 'font-weight: bold;'"
-					th:alt-title="${iStat.even}? 'even' : 'odd'">
-					<td th:text="${firstName}" />
-					<td th:text="${lastName}" />
-					<td th:text="${iStat.index}" />
-					<td th:text="${iStat.count}" />
-					<td th:text="${iStat.first}" />
-					<td th:text="${iStat.last}" />
+				<tr th:each="subscriber:${subscribers}">
+					<td th:text="${subscriber.firstName}" />
+					<td th:text="${subscriber.lastName}" />
+					<td><a href="#">Subscriber Details</a>
 				</tr>
 			</tbody>
 		</table>
