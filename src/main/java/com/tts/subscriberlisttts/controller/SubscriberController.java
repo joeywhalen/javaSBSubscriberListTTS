@@ -33,10 +33,10 @@ public class SubscriberController {
 		return "subscriber/result";
 	}
 	@GetMapping(value = "/subscribers")
-	public String getAllSubscribers(Model model) {
-		List<Subscriber> subscriberList = new ArrayList<Subscriber>();
-		subscriberList = subscriberRepository.findAll();
-		model.addAttribute("subscribers", subscriberList);
+	public String getAllSubscribers(Model model) {// (Subscriber subscriber, Model model) {
+		List<Subscriber> subscriberList = new ArrayList<Subscriber>();// change subscriberList to subscribers
+		subscriberList = subscriberRepository.findAll();// change subscriberList to subscribers
+		model.addAttribute("subscribers", subscriberList);// change subscriberList to subscribers
 		return "subscriber/subscribers";
 		
 	}
